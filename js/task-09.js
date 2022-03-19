@@ -4,7 +4,9 @@ const refs = {
 }
 
 refs.btnEl.addEventListener('click', () => {
-  refs.spanColorEl.style.color = getRandomHexColor();
+  let colorValue = getRandomHexColor();
+  refs.spanColorEl.textContent = colorValue;
+  document.body.style.backgroundColor = colorValue;
 });
 
 function getRandomHexColor() {

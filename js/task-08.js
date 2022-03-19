@@ -9,7 +9,7 @@ function onFormSubmit(event) {
 
     event.preventDefault();
 
-    const { email, password } = event.currentTarget.elements;
+    const { email, password } = event.target.elements;
 
     if (!email.value || !password.value) {
         alert("всі поля повинні бути заповнені");
@@ -20,5 +20,5 @@ function onFormSubmit(event) {
 
     console.log(formData);
     
-    event.currentTarget.reset();
+    event.target.reset();
 }

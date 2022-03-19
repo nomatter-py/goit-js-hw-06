@@ -1,13 +1,18 @@
 const inputEl = document.getElementById('validation-input');
 
 
-inputEl.addEventListener("blur", (event) => {
+inputEl.addEventListener("input", (event) => {
     
-    event.currentTarget.classList.toggle('valid');
-    event.currentTarget.classList.toggle('invalid');
+    if (event.target.classList.contains('valid')) {
+        event.target.classList.remove('valid');
+    }
 
-    let styleValue = (event.currentTarget.value.length >= event.currentTarget.getAttribute('data-length')) ? 'valid' : 'invalid';
-    event.currentTarget.classList.add(styleValue);
+    if (event.target.classList.contains('invalid')) {
+        event.target.classList.remove('invalid');
+    }
+    
+    let styleValue = (event.target.value.length >= event.target.getAttribute('data-length')) ? 'valid' : 'invalid';
+    event.target.classList.add(styleValue);
     
 });
 
